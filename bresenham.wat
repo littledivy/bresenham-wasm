@@ -104,11 +104,13 @@
    ;; start looping
    (loop $label$1
     (drop
+     ;; call JS callback
      (call $setPixel
       (get_local $0)
       (get_local $1)
      )
     )
+    ;; x == x1 and y == y1
     (block $label$2
      (br_if $label$2
       (i32.ne
@@ -171,7 +173,7 @@
       (get_local $4)
      )
     )
-    ;; branch to break check block
+    ;; test condition otherwise continue looping
     (br $label$1)
    )
   )
